@@ -1,0 +1,29 @@
+@mixin flipItem($baseSize){
+
+  .value-container {
+    margin: 1px;
+    width: $baseSize;
+    height: $baseSize*1.35;
+    font-size: $baseSize*1.1;
+    line-height: $baseSize/0.7;
+  }
+
+  .value .top:after {
+    top: round(($baseSize/1.6) * 1000) / 1000;
+  }
+
+  .value div.inner {
+    border-radius: $baseSize/4;
+  }
+
+  .value-container:last-child::after {
+    font-size: $baseSize;
+    line-height: $baseSize;
+    // right: -$baseSize/1.5;
+  }
+  .dest-container::after {
+    font-size: $baseSize;
+    line-height: $baseSize;
+    margin-left: $baseSize/10;
+  }
+}

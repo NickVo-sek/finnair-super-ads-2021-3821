@@ -1,0 +1,177 @@
+@import '../mixins';
+
+$width: 468px;
+$height: 400px;
+$sizeModifier: 1;
+$baseFontSize: 35px;
+
+.container {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+
+  h1 {
+    line-height: 47px;
+    letter-spacing: -1px;
+    top: 18px;
+    left: 10px;
+    font-size: 47px;
+  }
+  h2 {
+    position: relative;
+    font-size: 26px;
+    margin-right: 5px;
+    width: 235px;
+    text-align: left;
+    line-height: 30px;  
+  }
+}
+.content {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 0px 0 0px 0;
+  margin-top: -41px;
+  &.textSlide {
+    margin-top: 0;
+    h1 {
+      font-size: 38px;
+      line-height: 41px;
+    }
+  }
+}
+
+#text-frame-two {
+  width: 70%;
+  font-size: 35px;
+  opacity: 0;
+}
+#cta {
+  line-height: 33px;
+  font-size: 14px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 115px;
+  height: 30px;
+
+  svg {
+    top: 12px;
+    height: 8px;
+    right: 8px;
+    width: 10px;  
+  }
+}
+
+#finnair {
+  width: 80px;
+  height: 12.1px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#oneworld {
+  left: 10px;
+  bottom: 8px;
+  width: 15px;
+}
+
+.campaign-bar {
+  width: $width - 20;
+  height: 40px;
+  font-size: 14px;
+}
+
+.destinations {
+  align-items: center;
+  width: 77%;
+  height: 30%;
+  padding: 37px 20px 0px 20px;
+  margin-top: -2px;
+  justify-content: space-around;
+  &::before {
+    width: 105px;
+    font-size: 14px;
+    text-align: center;
+    color: #0b1560;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 178px;
+  }
+}
+
+.dest-container {
+  width: 110px;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+
+$valueSize: 32px;
+
+.value-container {
+  margin: 1px;
+  width: $valueSize;
+  height: $valueSize*1.35;
+  font-size: $valueSize*1.1;
+  line-height: $valueSize*1.35;
+}
+
+.value .top:after {
+  top: round(($valueSize/1.6) * 1000) / 1000;
+}
+
+.value div.inner {
+  border-radius: $valueSize/4;
+}
+
+#SlideWrapper {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.size_468x400 {
+  $i: 1;
+  .destinations.threeItems {
+    // Backup for SG $multiplier: $i*26px;
+    $multiplier: $i*32px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+
+  /* Single Dest size */
+  .destinations.single-dest.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+}

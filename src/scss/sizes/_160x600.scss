@@ -1,0 +1,147 @@
+@import '../mixins';
+
+$width: 160px;
+$height: 600px;
+
+.container {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+
+  #header-text {
+    line-height: 26px;
+    letter-spacing: -1px;
+    top: 18px;
+    left: 10px;
+    font-size: 23px;
+  }
+  .destination-title {
+    position: relative;
+    font-size: 21px;
+    margin-right: 5px;
+    width: 100%;
+    text-align: left;
+    line-height: 19px;  
+  }
+}
+.content {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0px 0 45px 10px;
+  margin-top: -70px;
+  &.textSlide {
+    h1{
+      font-size: 21px;
+      line-height: 26px;
+    }
+  }
+}
+
+#cta {
+  line-height: 31px;
+  font-size: 12px;
+  bottom: 90px;
+  left: 10px;
+  margin: 0 auto;
+  padding: 0 7px 0 10px;
+  height: 30px;
+
+  svg {
+    top: 12px;
+    height: 8px;
+    right: 8px;
+    width: 10px;  
+  }
+}
+
+#finnair {
+  width: 80px;
+  height: 12.1px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#oneworld {
+  left: 10px;
+  bottom: 8px;
+  width: 15px;
+}
+
+.campaign-bar {
+  width: $width - 20;
+  height: 30px;
+  font-size: 10px;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.destinations {
+  align-items: center;
+  width: 100%;
+  height: 43%;
+  padding: 0 10px 0 10px;
+  justify-content: flex-start;
+  &:before {
+    font-size: 12px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 10px;
+    color: #0b1560;
+    width: 110px;
+    text-align: left;
+    top: 160px;
+  }
+}
+
+.dest-container {
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+#SlideWrapper {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.size_160x600 {
+  $i: 1;
+  .destinations.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fiveItems {
+    $multiplier: $i*23px;
+    @include flipItem($multiplier)
+  }
+  .destinations.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+
+  /* Single Dest size */
+  .destinations.single-dest.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+}

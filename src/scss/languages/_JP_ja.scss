@@ -1,0 +1,210 @@
+$startingFrom: '今月のおすすめ';
+$currency: '\5186\304B\3089 \A \FF0B\8AF8\7A0E\7B49';
+* {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", helvetica,Arial,Verdana;
+}
+
+.value-container:last-child::after{
+  content: $currency;
+  white-space: pre;
+}
+.destinations::before {
+  content:  $startingFrom;
+}
+
+.size_728x90, .size_980x120, .size_980x400 {
+  .destinations::before {
+    display: none;
+  }
+  .dest-container::before {
+    display: block;
+    content: $startingFrom;
+  }
+}
+
+.size_160x600 {
+  #cta {
+    bottom: 55px;
+  }
+  .content {
+    margin-top: -116px;
+  }
+  .destination-title {
+    font-size: 16px;
+  }
+  .dest-container {
+    margin-bottom: 30px;
+  }
+  .destinations::before {
+    top: 142px;
+  }
+  .destinations.fiveItems .value-container:last-child::after {
+    font-size: 12px;
+    line-height: 14px;
+    width: 48px;
+    right: 0px;
+    top: 150%;
+    text-align: right;
+    white-space: pre;
+  }
+  .value-container:nth-child(3){
+    margin-right: 6px !important;
+  }
+  .value-container:nth-child(3)::after {
+    content: ",";
+    display: block;
+    font-size: 24px;
+    position: relative;
+    top: 2px;
+    right: -15.1px;
+  }
+}
+.size_300x250 {
+  .content {
+    padding: 0px 5px 21px 5px;
+  }
+  .destinations {
+    justify-content: center;
+  }
+  #header-text {
+    height: 52px;
+    display: flex;
+    align-items: center;
+  }
+  .destinations::before {
+    top: 105px;
+  }
+  .dest-container {
+    justify-content: center;
+    width: 140px;
+    .destination-title {
+      text-align: center;
+      padding-bottom: 3px;
+    }
+  }
+  .destinations.fiveItems .value-container:last-child::after{
+    font-size: 12px;
+    line-height: 14px;
+    width: 48px;
+    right: -40px;
+    top: 100%;
+    text-align: right;
+  }
+  .value-container:nth-child(3){
+    margin-right: 6px !important;
+  }
+  .value-container:nth-child(3)::after {
+    content: ",";
+    display: block;
+    font-size: 24px;
+    position: relative;
+    top: 0px;
+    right: -14px;
+  }
+}
+.size_300x600 {
+  .content {
+    padding: 0 10px 80px 10px;
+    margin-top: -66px;
+  }
+  #header-text {
+    font-size: 30px;
+  }
+  .destination-title {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .destinations::before {
+    top: 218px;
+  }
+  .destinations.fiveItems .value-container:last-child::after {
+    font-size: 12px;
+    line-height: 14px;
+    width: 48px;
+    right: 0px;
+    top: 160%;
+    text-align: right;
+    white-space: pre;
+  }
+  .value-container:nth-child(3){
+    margin-right: 6px !important;
+  }
+  .value-container:nth-child(3)::after {
+    content: ",";
+    display: block;
+    font-size: 24px;
+    position: relative;
+    top: 0px;
+    right: -13.5px;
+  }
+}
+.size_728x90 {
+  #cta {
+    line-height: 31px;
+    height: 30px;
+    padding: 0px 11px 0 11px;
+    font-size: 12px;
+    right: 100px;
+    top: 28px;
+  }
+  #header-text {
+    font-size: 24px;
+    white-space: nowrap;
+    br {
+      display: none;
+    }
+  }
+  .destinations {
+    padding: 0 30px 22px 55px;
+    width: 66%;
+  }
+  .destinations.single-dest {
+    width: 69%;
+    .destination-title {
+      visibility: hidden;
+      position: relative;
+      padding: 0 0 3px 0;
+    }
+    .destination-title::after {
+      content: "\304A\5F97\306A\904B\8CC3";
+      visibility: visible;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+  }
+  .destinations.fiveItems .value-container:last-child::after {
+    font-size: 12px;
+    line-height: 14px;
+    width: 48px;
+    right: -40px;
+    top: 105%;
+    text-align: right;
+  }
+  .destinations.single-dest.fiveItems .value-container:last-child::after {
+    font-size: 12px !important;
+    line-height: 14px;
+    width: 48px;
+    right: -40px;
+    top: 105%;
+    text-align: right;
+  }
+  .destination-title {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .dest-container::before {
+    display: none;
+  }
+  .value-container:nth-child(3){
+    margin-right: 6px !important;
+  }
+  .value-container:nth-child(3)::after {
+    content: ",";
+    display: block;
+    font-size: 24px;
+    position: relative;
+    top: 0px;
+    right: -20.4px;
+  }
+}

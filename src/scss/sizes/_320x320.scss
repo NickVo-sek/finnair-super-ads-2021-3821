@@ -1,0 +1,174 @@
+@import '../mixins';
+
+$width: 320px;
+$height: 320px;
+$sizeModifier: 1;
+$baseFontSize: 35px;
+
+.container {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+
+  h1 {
+    line-height: 32px;
+    letter-spacing: -1px;
+    top: 18px;
+    left: 10px;
+    font-size: 32px;
+  }
+  h2 {
+    position: relative;
+    font-size: 22px;
+    margin-right: 5px;
+    width: 235px;
+    text-align: left;
+    line-height: 22px;  
+  }
+}
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding: 0px 10px 15px 10px;
+  margin-top: -19px;
+  &.textSlide {
+    padding: 0px 15px 15px 15px;
+    margin-top: -3px;
+    h1 {
+      font-size: 28px;
+      line-height: 30px;
+    }
+  }
+}
+
+#cta {
+  line-height: 31px;
+  font-size: 14px;
+  bottom: 30px;
+  margin: 0 auto;
+  padding: 0 10px 0 12px;
+  height: 30px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  svg {
+    top: 12px;
+    height: 8px;
+    right: 8px;
+    width: 10px;  
+  }
+}
+
+
+
+#finnair {
+  width: 80px;
+  height: 12.1px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#oneworld {
+  left: 10px;
+  bottom: 8px;
+  width: 15px;
+}
+
+.campaign-bar {
+  width: $width - 20;
+  height: 30px;
+  font-size: 13px;
+}
+
+.destinations {
+  align-items: center;
+  width: 100%;
+  height: 28%;
+  padding: 0px 20px 0px 20px;
+  margin-top: 4px;
+  justify-content: space-around;
+  position: relative;
+
+  &:before {
+    font-size: 12px;
+    text-transform: uppercase;
+    position: absolute;
+    text-emphasis: center;
+    color: #0b1560;
+    width: 90px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -5px;
+  }
+}
+
+.dest-container {
+  width: 95px;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+#SlideWrapper {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.size_320x320 {
+  $i: 1;
+  .destinations.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier);
+
+    .dest-container{
+      width: 4*26px;
+    }
+  }
+  .destinations.fourItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier);
+
+    .dest-container{
+      width: 5*22px;
+    }
+  }
+  .destinations.fiveItems {
+    $multiplier: $i*19px;
+    @include flipItem($multiplier);
+    
+    .dest-container{
+      width: 6*20px;
+    }
+  }
+  .destinations.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier);
+
+    .dest-container{
+      width: 7*18px;
+    }
+  }
+
+  /* Single Dest size */
+  .destinations.single-dest.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+}

@@ -1,0 +1,147 @@
+*.show {
+  opacity: 0;
+  animation: show 0.3s linear forwards;
+}
+*.hide {
+  opacity: 1;
+  animation: hide 0.3s linear forwards;
+}
+
+$slideDuration: 4500s;
+.destination-title.show {
+  animation-delay: $slideDuration/3000;
+}
+.destination-title.hide {
+  animation-delay: $slideDuration/1451;
+}
+.content.hide, .destinations.hide {
+  animation-delay: $slideDuration/1250;
+}
+
+
+// Basic slide fade-animation
+#SlideWrapper .single-dest {
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+#SlideWrapper.outro.final-frame {
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+#SlideWrapper.intro.final-frame {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+#SlideWrapper.outro .single-dest{
+  opacity: 0;
+}
+.content {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+.content.outro {
+  opacity: 0;
+}
+#SlideWrapper.intro .single-dest{
+  opacity: 0;
+}
+
+#SlideWrapper .destinations .destination-title{
+  transition: opacity 0.5s linear;
+  opacity: 1;
+}
+
+#SlideWrapper .destinations {
+  transition: opacity 0.5s linear;
+  opacity:1;
+}
+#SlideWrapper .destinations.basic-intro {
+  opacity:0;
+}
+
+/* Multiple destinations animations ---------------- */
+// Animate in ONLY destination titles
+#SlideWrapper .destinations .destination-title{
+  transition: opacity linear;
+  transition-duration: 0.2s;
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+#SlideWrapper .destinations.quick-intro .destination-title{
+  opacity: 0;
+}
+
+// Animate out ONLY destination titles
+#SlideWrapper .destinations .destination-title.quick-outro {
+  transition-duration: 0.2s;
+  opacity:0;
+  transition-delay: 0s;
+}
+/* ---------------- Multiple destinations animations  */
+
+
+
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes campaignTop {
+  0% {
+    top: -30px;
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes stackOrder {
+  0% {
+    z-index: 2;
+  }
+  5% {
+    z-index: 4;
+  }
+  100% {
+    z-index: 4;
+  }
+}
+
+
+@keyframes rotateFrom {
+  0% {
+    transform: rotateX(90deg) rotateZ(0.1deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes rotateTo {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg) rotateZ(0.1deg);
+  }
+}

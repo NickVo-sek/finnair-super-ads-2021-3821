@@ -1,0 +1,44 @@
+$startingFrom: 'Prices starting from';
+$currency: 'HKD';
+
+* {
+  font-family: 'Amplitude-bold';
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Amplitude-bold';
+}
+#cta span, .dest-container::before, .destinations::before {
+  font-family: 'Amplitude-light'
+}
+.value-container:last-child::after{
+  content: $currency;
+}
+.destinations::before {
+  content:  $startingFrom;
+}
+
+.size_728x90, .size_980x120, .size_980x400 {
+  .destinations::before {
+    display: none;
+  }
+  .dest-container::before {
+    display: block;
+    content: $startingFrom;
+  }
+}
+.size_300x250 {
+  .dest-container {
+    width: 96px;
+  }
+}
+.size_300x600 {
+  .urgency-header {
+    font-size: 31px;
+  }
+}
+
+.size_728x90 {
+  .urgency-header {
+    font-size: 31px;
+  }
+}

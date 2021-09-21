@@ -1,0 +1,277 @@
+@import '../mixins';
+
+.container {
+  position: absolute;
+  width: 912px;
+  height: 90px;
+  border: 2px solid gray;
+}
+
+.container > .content {
+  /* margin-top: 108px; */
+}
+
+.container h1 {
+  font-size: 45px;
+  line-height: 52px;
+  letter-spacing: -1px;
+  top: 17px;
+  left: 122px;
+}
+#header-text {
+  text-align: center;
+  opacity: 0;
+}
+#text-frame-two {
+  width: 70%;
+  font-size: 35px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.container h2 {
+  position: relative;
+  float: left;
+  font-size: 21px;
+  margin-right: 5px;
+  width: 95px;
+  text-align: right;
+  line-height: 37px;
+}
+#cta {
+  line-height: 33px;
+  height: 30px;
+  padding: 0px 24px 0 7px;
+  font-size: 12px;
+  right: 215px;
+  top: 28px;
+}
+
+#cta svg {
+  top: 12px;
+  height: 8px;
+  right: 8px;
+  width: 10px;
+}
+
+#finnair {
+  width: 80px;
+  height: 12.1px;
+  right: 122px;
+  bottom: 10px;
+}
+
+#oneworld {
+  right: 122px;
+  top: 8px;
+  width: 15px;
+}
+
+.container > .campaign-bar {
+  display: none !important;
+}
+.container > .campaign-bar.animate-bar {
+  -webkit-animation: campaignTop 0.5s ease forwards;
+  animation: campaignTop 0.5s ease forwards;
+}
+.animate-out-header {
+  -webkit-animation: hide 0.4s 4.1s ease forwards !important;
+          animation: hide 0.4s 4.1s ease forwards !important;
+}
+@-webkit-keyframes campaignTop {
+  0% {
+    top: -30px;
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes campaignTop {
+  0% {
+    top: -30px;
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+.container > .campaign-bar svg {
+  margin-right: 10px;
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-animation: plane 0.5s 1s ease forwards;
+          animation: plane 0.5s 1s ease forwards;
+}
+
+@-webkit-keyframes plane {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 48px;
+  }
+}
+
+@keyframes plane {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 48px;
+  }
+}
+.twolines{
+  line-height: 1.3em;
+  display: block;
+  span{
+    display: block;
+  }
+}
+
+.destinations {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  // left: 10px;
+  height: 30%;
+  width: 100%;
+  opacity: 0;
+  margin-top: 35px;
+  padding-left: 122px;
+  transform: translateY(-35%) !important;
+  transform-origin: center;
+}
+
+.destinations.first-frame {
+  justify-content: flex-end;
+  width: 72%;
+  align-items: center !important;
+  //margin-top: 35px;
+  transform: translateY(-35%) !important;
+  transform-origin: center;
+}
+.destinations.first-frame h2{
+  width: 132px;
+}
+
+.destinations.first-frame .dest-container {
+  width: 350px;
+}
+
+.dest-container {
+  width: 245px;
+  margin-bottom: 10px;
+}
+
+
+/* Skeleton */
+.value-container {
+  position: relative;
+  float: left;
+  margin: 1px;
+  width: 22px;
+  height: 32.5px;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 32px;
+  border-radius: 4px;
+}
+
+.first-frame .value-container {
+  position: relative;
+  float: left;
+  margin: 1px;
+  width: 27px;
+  height: 40.5px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 39px;
+  border-radius: 8px;
+}
+
+.first-frame .dest-container {
+  width: 250px;
+}
+
+.first-frame .dest-container h2 {
+  font-size: 26px;
+  line-height: 46px;
+}
+
+.first-frame .dest-container::before {
+  font-size: 22px;
+  width: 130px;
+  left: -144px;
+  top: 78px;
+}
+
+.first-frame .dest-container .value .top:after {
+  top: 19px;
+}
+
+.value .top:after {
+  top: 15px;
+}
+
+.value div.inner {
+  border-radius: 5px;
+}
+
+.first-frame .value div.inner {
+  border-radius: 8px;
+}
+
+.size_912x90 {
+  $i: 1;
+  .destinations.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+
+  /* Single Dest size */
+  .destinations.single-dest.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+}

@@ -1,0 +1,77 @@
+$startingFrom: 'Prices starting from';
+$currency: 'SGD';
+
+* {
+  font-family: 'Amplitude-bold';
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Amplitude-bold';
+}
+#cta span, .dest-container::before, .destinations::before{
+  font-family: 'Amplitude-light'
+}
+
+.value-container:last-child::after{
+  content: $currency;
+  font-size: 18px !important;
+  right: -34.33333px;
+}
+
+.destinations::before {
+  content:  $startingFrom;
+}
+
+.size_728x90, .size_980x120, .size_980x400 {
+  .destinations::before {
+    display: none;
+  }
+  .dest-container::before {
+    display: block;
+    content: $startingFrom;
+    font-size: 11px;
+  }
+}
+
+.size_300x250 {
+  .destinations::before {
+    width: 130px;
+    top: 90px;
+  }
+  .container #header-text{
+    font-size: 1.2em;
+  }
+}
+
+.size_160x600 {
+  .destinations::before {
+    top: 14.5em;
+    font-size: 11px;
+  }
+}
+.size_300x600 {
+  .container h2{
+    font-size: 20px;
+  }
+  .destinations::before {
+    width: 135px;
+    top: 16.1em;
+  }
+}
+
+.size_728x90 {
+  .value-container:last-child::after {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  #cta{
+    padding: 0px 24px 0 24px;
+  }
+  #header-text{
+    font-size: 0.7em;
+    line-height: 26px;
+  }
+  .single-dest{
+    .destination-title {display: none;}
+    .dest-container::before {top: 3px !important;}
+  } 
+}

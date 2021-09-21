@@ -1,0 +1,242 @@
+@import '../mixins';
+
+.container {
+  position: absolute;
+  width: 272px;
+  height: 220px;
+  border: 2px solid gray;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.container > .content {
+  margin-top: 44px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#header-text {
+  font-size: 29px;
+  color: #0b1560;
+  line-height: 38px;
+  letter-spacing: -1px;
+  position: absolute;
+}
+
+.destination-title {
+  font-size: 16px;
+  color: #0b1560;
+  text-align: center;
+  margin-left: -32px;
+}
+
+.animate-out {
+  animation: hide 0.4s 7s linear forwards;
+}
+
+.animate-in {
+  opacity: 0;
+  animation: show 0.3s 1.3s linear forwards;
+}
+
+.animate-in-now {
+  opacity: 0;
+  animation: show 0.3s 0.4s ease forwards !important;
+}
+
+.animate-out-now {
+  animation: hide 0.4s ease forwards !important;
+}
+
+.destination-title.fade-out-title {
+  animation: hide 0.4s ease forwards !important;
+}
+
+#cta {
+  position: absolute;
+  z-index: 9999;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  background: #0b1560;
+  text-align: center;
+  opacity: 0;
+  line-height: 28px;
+  height: 27px;
+  padding: 0px 26px 0 11px;
+  font-size: 12px;
+  bottom: 31px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#cta svg {
+  position: absolute;
+  top: 10px;
+  height: 8px;
+  right: 12px;
+  width: 10px;
+  display: inline-block;
+  fill: #fff;
+}
+
+#finnair {
+  width: 76px;
+  height: 9.1px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+#oneworld {
+  left: 10px;
+  bottom: 8px;
+  position: absolute;
+  width: 15px;
+}
+
+.container > .campaign-bar {
+  background: none;
+  letter-spacing: 0.1px;
+  width: 252px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  opacity: 0;
+  height: 27px;
+  color: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 15px;
+  font-size: 13px;
+  top: -30px;
+}
+.container > .campaign-bar.animate-bar {
+  animation: campaignTop 0.5s ease forwards;
+}
+
+@keyframes campaignTop {
+  0% {
+    top: -30px;
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+.container > .campaign-bar svg {
+  margin-right: 10px;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  opacity: 0;
+  animation: plane 0.5s 1s ease forwards;
+}
+
+@keyframes plane {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 45px;
+  }
+}
+
+.destinations {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  text-align: left;
+  text-transform: uppercase;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 54%;
+  opacity: 0;
+  animation: show 0.4s linear forwards;
+  transform: translateY(-40%);
+}
+
+.destinations.first-frame {
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: 1;
+  width: 100%;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  animation: hide 0.2s 4.3s ease-out forwards;
+  transform: translateY(-50%);
+}
+
+.destinations.first-frame .dest-container {
+  animation: show 0.2s ease-in forwards;
+}
+
+.dest-container {
+  width: 144px;
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 32px;
+}
+
+.dest-container:nth-child(even) {
+  margin-left: 2px;
+}
+
+
+.size_272x220 {
+  $i: 1;
+  .destinations.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+  /* Single Dest size */
+  .destinations.single-dest.threeItems {
+    $multiplier: $i*26px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fourItems {
+    $multiplier: $i*22px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.fiveItems {
+    $multiplier: $i*20px;
+    @include flipItem($multiplier)
+  }
+  .destinations.single-dest.sixItems {
+    $multiplier: $i*18px;
+    @include flipItem($multiplier)
+  }
+}

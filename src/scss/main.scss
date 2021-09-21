@@ -1,0 +1,161 @@
+@charset "UTF-8";
+$finnairBlue: #0b1560;
+
+@import 'mixins';
+@import 'flipItems';
+@import 'fonts';
+@import 'animations';
+
+
+/* Reset */
+/* Change */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* Main */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  user-select: none;
+  color: #333;
+  background-color: #ffffff;
+}
+#bg-exit {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  position: absolute;
+}
+.content {
+  text-transform: uppercase;
+}
+.container {
+  position: absolute;
+  border: 1px solid gray;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  opacity: 0;
+  h1, h2 {
+    color: $finnairBlue;
+  }
+}
+
+.value-container:last-child::after {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+#cta {
+  z-index: 9999;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  background: $finnairBlue;
+  text-align: center;
+  position: absolute;
+  text-transform: uppercase;
+
+  svg {
+    display: inline-block;
+    fill: #fff;
+  }
+}
+
+#finnair, #oneworld {
+  position: absolute;
+}
+
+.campaign-bar {
+  background: none;
+  letter-spacing: 0.1px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  opacity: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -30px;
+  text-transform: uppercase;
+
+  svg {
+    margin-right: 5px;
+    animation: plane 0.5s 1s ease forwards;
+  }
+}
+.container > .campaign-bar.animate-bar {
+  animation: campaignTop 0.5s ease forwards;
+}
+
+
+.destinations {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  align-items: center;
+  // opacity: 0;
+}
+
+.dest-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &::before {
+    text-align: right;
+    color: $finnairBlue;
+    position: absolute;
+  }
+  &::after {
+    
+    /* Languae specific content */
+  }
+}
+
+/* todo */
+#SlideWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+

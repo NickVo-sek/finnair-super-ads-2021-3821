@@ -1,0 +1,121 @@
+$startingFrom: 'Prisene gjelder fra';
+$currency: 'NOK';
+
+* {
+  font-family: 'Amplitude-bold';
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Amplitude-bold';
+}
+#cta span, .dest-container::before, .destinations::before{
+  font-family: 'Amplitude-light'
+}
+
+.value-container:last-child::after{
+  content: $currency;
+  font-size: 0.7em !important;
+  right: -2.0em;
+}
+
+.destinations::before {
+  content:  $startingFrom;
+}
+
+.size_728x90, .size_980x120, .size_980x400 {
+  .destinations::before {
+    display: none;
+  }
+  .dest-container::before {
+    display: block;
+    content: $startingFrom;
+    font-size: 11px;
+  }
+}
+
+.size_980x400 {
+  #header-text{
+    font-size: 50px;
+  }
+  .destinations.single-dest .dest-container::before {top: 20px;}
+}
+
+.size_300x250 {
+  .destinations::before {
+    top: -10px;
+    width: 110px;
+  }
+  .container #header-text{
+    font-size: 1.2em;
+  }
+  .dest-container {
+    width: 124px !important;
+  }
+    
+}
+
+.size_320x320 {
+  .destinations::before {
+    top: -17px;
+    width: 110px;
+  }
+  .destinations {
+    padding: 0px 0px 0px 20px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  #header-text{
+    font-size: 1.4em;
+  }
+  .dest-container {
+    width: 138px !important;
+    padding: 0.2rem 0;
+    position: relative;
+  }
+}
+
+.size_160x600 {
+  .destinations::before {
+    top: 14.5em;
+    font-size: 11px;
+  }
+  .textSlide #header-text {
+    font-size: 1.35em;
+  } 
+}
+.size_300x600 {
+  .container h2{
+    font-size: 20px;
+  }
+  .destinations::before {
+    width: 135px;
+    top: 16.1em;
+  }
+  .dest-container {
+    width: 125px;
+  }
+}
+
+.size_728x90 {
+  .value-container:last-child::after {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  #cta{
+    padding: 0px 24px 0 24px;
+  }
+  #header-text{
+    font-size: 0.7em;
+    line-height: 26px;
+  }
+  .single-dest{
+    .destination-title {display: none;}
+    .dest-container::before {top: 3px !important;}
+  }
+  .dest-container {
+    width: 155px;
+  }
+  .destination-title {
+    font-size: 21px;
+  } 
+}
